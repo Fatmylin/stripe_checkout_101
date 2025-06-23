@@ -1,0 +1,12 @@
+<h1>Success</h1>
+<p>You just bought the product</p>
+
+<% @line_items.each do |line_item| %>
+  <p><%= line_item.description %></p>
+  <br>
+  <p><%= line_item.price.unit_amount / 100 %><%= line_item.price.currency %></p>
+  <% product = Stripe::Product.retrieve(line_item.price.product) %>
+  <%= image_tag product.images[0], width: 100 %>
+<% end %>
+
+<p>Your total is <%= @session.amount_total / 100 %> <%= @session.currency %></p>
