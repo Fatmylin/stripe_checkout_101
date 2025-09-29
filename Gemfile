@@ -57,6 +57,6 @@ group :test do
 end
 
 gem "stripe", "~> 15.2"
-gem "pay", "~> 11.1"
+gem "pay", "~> 11.2"
 
 gem "devise", "~> 4.9"
